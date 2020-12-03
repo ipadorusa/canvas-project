@@ -1,7 +1,7 @@
 class App {
-    constructor() {
+    constructor(el) {
         this.canvas = document.createElement('canvas');
-        document.body.appendChild(this.canvas);
+        document.querySelector(el).appendChild(this.canvas);
         this.ctx = this.canvas.getContext('2d');
         this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
@@ -32,4 +32,4 @@ class App {
         this.ctx.fill();
     }
 }
-window.onload = () => new App();
+window.onload = () => new App('#canvas');
